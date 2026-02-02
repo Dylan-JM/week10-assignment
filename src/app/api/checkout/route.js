@@ -8,6 +8,7 @@ export async function POST(req) {
   const { productId } = body;
 
   const product = products.find((p) => p.id === productId);
+  const imageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${product.image}`;
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
@@ -15,10 +16,10 @@ export async function POST(req) {
     line_items: [
       {
         price_data: {
-          currency: "usd",
+          currency: "gbp",
           product_data: {
             name: product.name,
-            images: [product.image],
+            images: [imageUrl],
           },
           unit_amount: product.price,
         },

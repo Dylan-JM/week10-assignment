@@ -31,7 +31,7 @@ export default function ProductCard({ product }) {
 
       <p className="text-lg font-semibold text-gray-800">{product.name}</p>
 
-      <p className="text-gray-600 text-md">${product.price / 100}</p>
+      <p className="text-gray-600 text-md">£{product.price / 100}</p>
 
       <button
         onClick={handlePay}
