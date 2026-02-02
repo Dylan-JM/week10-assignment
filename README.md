@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://stripe.com/gb">
-    <img src="./images/stripelogo.png" alt="Stripe Logo" width="80" height="80">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/1280px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe Logo" width="125" height="80">
   </a>
 
   <h3 align="center">Stripe Setup</h3>
