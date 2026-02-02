@@ -1,36 +1,222 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a id="readme-top"></a>
+-->
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Stripe Setup</h3>
+
+  <p align="center">
+    A Next.js Project With Stripe Implementation!
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+
+Here's why:
+
+- Your time should be focused on creating something amazing. A project that solves a problem and helps others
+- You shouldn't be doing the same tasks over and over like creating a README from scratch
+- You should implement DRY principles to the rest of your life :smile:
+
+Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+
+Use the `BLANK_README.md` to get started.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+- [![Next][Next.js]][Next-url]
+- [![React][React.js]][React-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
 
 ## Getting Started
 
-First, run the development server:
+- npm
+  ```sh
+  npx create-next-app@latest
+  ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+- Stripe
+  ```sh
+  npm install stripe
+  ```
+
+### Installation
+
+1. Create Next.js Project
+
+- npm
+
+  ```sh
+  npx create-next-app@latest
+  ```
+
+  Typescript : NO, Linter: ESLint, React Compiler: Yes, Tailwind CSS:Yes, src/directory: Yes, App Router: Yes,
+  Import Alias,: NO.
+
+2. Create/setup a stripe account and find your publishable/secret keys.
+
+   ```sh
+   https://stripe.com/gb
+   ```
+
+3. Create a .env.local file in the root folder & add your keys using this example.
+   ```sh
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=\\\YOURPUBLISHABLEKEYHERE\\\
+    STRIPE_SECRET_KEY=\\\YOURSECRETKEYHERE\\\
+    NEXT_PUBLIC_BASE_URL=http://localhost:3000 \\\EXAMPLE ADD YOUR LOCALHOST:PORT HERE
+   ```
+4. Create a api folder inside of src/app then inside the api folder create a checkout folder. inside the checkout folder create a route.js and add the code below.
+
+   ```js
+   import Stripe from "stripe";
+   import { products } from "@/app/data/products";
+   ```
+
+   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+   export async function POST(req) {
+   const body = await req.json();
+   const { productId } = body;
+
+   const product = products.find((p) => p.id === productId);
+
+   const session = await stripe.checkout.sessions.create({
+   mode: "payment",
+   payment_method_types: ["card"],
+   line_items: [
+   {
+   price_data: {
+   currency: "usd",
+   product_data: {
+   name: product.name,
+   images: [product.image],
+   },
+   unit_amount: product.price,
+   },
+   quantity: 1,
+   },
+   ],
+   success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
+   cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
+   });
+
+   return Response.json({ url: session.url });
+   }
+
+````
+5. Inside app create a cancel folder within that create a page.js and add the code below.
+```js
+  export default function Cancel() {
+    return <h1>Payment canceled </h1>;
+  }
+````
+
+6. Inside app create a success folder within that create a page.js and add the code below.
+
+```js
+export default function Success() {
+  return <h1>Payment successful</h1>;
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<!-- USAGE EXAMPLES -->
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-To learn more about Next.js, take a look at the following resources:
+_For more examples, please refer to the [Documentation](https://example.com)_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<!-- ROADMAP -->
 
-## Deploy on Vercel
+## Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [x] Add Changelog
+- [x] Add back to top links
+- [ ] Add Additional Templates w/ Examples
+- [ ] Add "components" document to easily copy & paste sections of the readme
+- [ ] Multi-language Support
+  - [ ] Chinese
+  - [ ] Spanish
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+- [Youtube - How to add Stripe payments to ANY Next.js 14 App! (Easy Tutorial for Beginners)](https://www.youtube.com/watch?v=fgbEwVWlpsI)
+- [Getting started with Next.js, TypeScript, and Stripe Checkout](https://vercel.com/kb/guide/getting-started-with-nextjs-typescript-stripe)
+- [Stripe Checkout and Webhook in a Next.js Application](https://www.pedroalonso.net/blog/stripe-integration-nextjs/#5-using-with-nextjs-app-router)
+- [React Stripe.js](https://docs.stripe.com/sdks/stripejs-react)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
