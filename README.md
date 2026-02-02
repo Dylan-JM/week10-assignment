@@ -336,4 +336,3 @@ Check out the resources used!
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Stripe-url]: https://stripe.com/gb
-[Stripe]: https://img.shields.io/badge/Stripe-6772E5?style=for-the-badge&logo=stripe&logoColor=white
