@@ -31,7 +31,7 @@ export default function ProductCard({ product }) {
         />
       </div>
 
-      <div className="flex flex-col flex-grow mt-4">
+      <div className="flex flex-col grow mt-4">
         <p className="text-lg font-semibold text-gray-800">{product.name}</p>
         <p className="text-gray-600 text-md">£{product.price / 100}</p>
 
