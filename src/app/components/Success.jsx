@@ -39,7 +39,7 @@ export default function Success() {
             />
           </div>
 
-          <p className="text-xl font-semibold">{product.name}</p>
+          <p className="text-xl font-semibold text-black">{product.name}</p>
           <p className="text-gray-600">£{(product.price / 100).toFixed(2)}</p>
           <p className="text-gray-600">Quantity: 1</p>
         </div>
