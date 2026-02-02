@@ -1,11 +1,10 @@
 <a id="readme-top"></a>
--->
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://stripe.com/gb">
+    <img src="./images/stripelogo.png" alt="Stripe Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Stripe Setup</h3>
@@ -30,6 +29,8 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#basic-setup">Basic Setup</a></li>
+        <li><a href="#cloning">Cloning</a></li>
+        <li><a href="#liveshare-setup">LiveShare Setup</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -43,17 +44,19 @@
 
 ## About The Project
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This project demonstrates a basic Stripe Checkout integration in a Next.js application. It is designed as a learning-focused example that shows how to securely create checkout sessions using Stripe’s API and redirect users to a hosted payment page.
 
-Here's why:
+The goal of this project is to provide a clear and minimal reference for developers who want to:
 
-- Your time should be focused on creating something amazing. A project that solves a problem and helps others
-- You shouldn't be doing the same tasks over and over like creating a README from scratch
-- You should implement DRY principles to the rest of your life :smile:
+Integrate Stripe Checkout into a modern Next.js app
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+Understand how to structure API routes using the App Router
 
-Use the `BLANK_README.md` to get started.
+Securely handle Stripe secret keys with environment variables
+
+Build a foundation that can be expanded to support multiple products, subscriptions, or webhooks.
+
+This setup is ideal for beginners getting started with Stripe as well as developers who want a lightweight template they can build upon for real-world payment flows.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -63,6 +66,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 - [![Next][Next.js]][Next-url]
 - [![React][React.js]][React-url]
+- [![Stripe][Stripe]][Stripe-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -221,6 +225,68 @@ Once you have completed the setup, you can use the Stripe checkout in your Next.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Cloning & Using Multiple Products -->
+
+### Cloning
+
+To clone this repository and run it locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone git@github.com:Dylan-JM/week10-assignment.git
+
+   ```
+
+2. Navigate into the project directory:
+
+   ```bash
+   cd your_repo_name
+
+   ```
+
+3. Install dependencies
+
+   ```
+   npm install
+   ```
+
+4. Create a .env.local file in the root folder and add the code below.
+   (MUST SETUP STRIPE ACCOUNT FIRST)
+
+   ```
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_publishable_key
+   STRIPE_SECRET_KEY=your_secret_key
+   NEXT_PUBLIC_BASE_URL=http://localhost:3000
+   ```
+
+5. Run It!
+   ```
+   npm run dev
+   ```
+
+<!-- Paired Programming -->
+
+## LiveShare
+
+  <ul>
+    <li>Live Share is a Visual Studio Code extension that enables real-time collaboration on the same codebase.</li>
+    <li>It can be used for paired programming, code reviews, mentoring, and technical interviews.</li>
+    <li>Developers can edit code together, follow each other’s cursors, and navigate files in sync.</li>
+    <li>Live Share allows shared terminals, debugging sessions, and local servers.</li>
+    <li>It reduces setup time since collaborators can join without cloning the repository.</li>
+  </ul>
+
+## LiveShare Setup
+
+1. In VS Code Extension Search For Live Share & Install it.(The Creator Is Microsoft)
+
+2. You can either share or join
+
+3. If you're sharing click share and send the url to your group.
+
+4. If joining click join and paste the link given to you.
+
 <!-- ROADMAP -->
 
 ## Roadmap
@@ -236,21 +302,6 @@ Once you have completed the setup, you can use the Stripe checkout in your Next.
 - [ ] Deployment guide for Vercel/Netlify with Stripe integration
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Cloning & Using Multiple Products -->
-
-### Cloning
-
-To clone this repository and run it locally, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your_username/your_repo_name.git
-
-   ```
-
-2. Navigate into the project directory:
 
 <!-- CONTACT -->
 
@@ -283,3 +334,5 @@ Check out the resources used!
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+
+[Stripe ]
