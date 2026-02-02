@@ -7,7 +7,7 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/1280px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe Logo" width="125" height="80">
   </a>
 
-  <h3 align="center">Stripe Setup</h3>
+  <h3 align="center">Next.js & Stripe Setup</h3>
 
   <p align="center">
     A Next.js Project With Stripe Implementation!
@@ -227,7 +227,7 @@ Once you have completed the setup, you can use the Stripe checkout in your Next.
 
 <!-- Cloning & Using Multiple Products -->
 
-### Cloning
+### Cloning (Includes Multiple Products(Intermediate))
 
 To clone this repository and run it locally, follow these steps:
 
@@ -309,7 +309,7 @@ To clone this repository and run it locally, follow these steps:
 
 Adam Booth - [@Adam Booth](https://www.linkedin.com/in/adam-booth-35981636a/) - adam_booth@live.co.uk
 
-Adam Booth - [@Adam Booth](https://www.linkedin.com/in/adam-booth-35981636a/) - adam_booth@live.co.uk
+Dylan Marley - [@Dylan Marley](https://www.linkedin.com/in/dylan-marley-a439bb1b8/) - dylan.james.marley@gmail.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
@@ -325,6 +325,7 @@ Check out the resources used!
 - [Getting started with Next.js, TypeScript, and Stripe Checkout](https://vercel.com/kb/guide/getting-started-with-nextjs-typescript-stripe)
 - [Stripe Checkout and Webhook in a Next.js Application](https://www.pedroalonso.net/blog/stripe-integration-nextjs/#5-using-with-nextjs-app-router)
 - [React Stripe.js](https://docs.stripe.com/sdks/stripejs-react)
+- [LiveShare VS Code](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

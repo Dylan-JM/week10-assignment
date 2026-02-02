@@ -20,8 +20,8 @@ export default function Success() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 flex items-centre justify-centre p-6">
-      <div className="bg-white rounded-xl shadow-md p-8 max-w-md w-full text-centre">
+    <main className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+      <div className="max-w-md w-full">
         <h1 className="text-3xl font-bold text-green-600 mb-4">
           Payment Successful
         </h1>
