@@ -8,8 +8,8 @@ export default function Cancel() {
           Payment Cancelled
         </h1>
         <p className="text-gray-600 mb-6">
-          Your payment didn’t go through. You can return to the shop and try
-          again.
+          Your payment didn&apos;t go through. You can return to the shop and
+          try again.
         </p>
         <Link
           href="/"
