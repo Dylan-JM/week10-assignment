@@ -265,6 +265,9 @@ To clone this repository and run it locally, follow these steps:
    npm run dev
    ```
 
+## Demo Project
+[Demo](https://week10-assignment-five.vercel.app/)
+
 <!-- Paired Programming -->
 
 ## LiveShare
@@ -310,8 +313,6 @@ To clone this repository and run it locally, follow these steps:
 Adam Booth - [@Adam Booth](https://www.linkedin.com/in/adam-booth-35981636a/) - adam_booth@live.co.uk
 
 Dylan Marley - [@Dylan Marley](https://www.linkedin.com/in/dylan-marley-a439bb1b8/) - dylan.james.marley@gmail.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
