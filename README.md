@@ -70,6 +70,16 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Why Stripe over other options?
+
+* Better for online payments and web integration - wider range of online payment tools. Supports subscriptions, marketplaces, billing systems.
+* More developer features - Powerful APIs, automation tools and extensive documentation.
+* Better customer support
+* Integrates better with third-party software including accounting platforms, CRMs.
+* Suitable for scaling - fraud detection, multi-currency support.
+* Good for online businesses, SaaS, marketplaces and custom apps
+
+
 <!-- GETTING STARTED -->
 
 ### Prerequisites
